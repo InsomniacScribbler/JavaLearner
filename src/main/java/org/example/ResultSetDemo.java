@@ -20,13 +20,40 @@ public class ResultSetDemo {
 			String query = "select * from students";
 			ResultSet resultSet = statement.executeQuery(query);
 
-			while (resultSet.next()){
-				int id = resultSet.getInt("id");
-				String name = resultSet.getString("name");
-				String course = resultSet.getString("course");
-				System.out.println(id+"||"+name+"||"+course);
+//			while (resultSet.next()){
+//				int id = resultSet.getInt("id");
+//				String name = resultSet.getString("name");
+//				String course = resultSet.getString("course");
+//				System.out.println(id+"||"+name+"||"+course);
+//
+//			}
 
-			}
+
+			resultSet.first();
+
+//			System.out.println("Fetching first row");
+//			int id2 = resultSet.getInt("id");
+//			String name2 = resultSet.getString("name");
+//			String course2 = resultSet.getString("course");
+//			System.out.println(id2+"||"+name2+"||"+course2);
+
+			resultSet.updateString("name","Akash");
+			resultSet.updateRow();
+
+			resultSet.moveToInsertRow();
+			resultSet.updateInt("id",5);
+			resultSet.updateString("name", "Sujit");
+			resultSet.updateString("course","MERN");
+			resultSet.insertRow();
+			resultSet.last();
+			System.out.println("Fetching last row");
+			int id = resultSet.getInt("id");
+			String name = resultSet.getString("name");
+			String course = resultSet.getString("course");
+			System.out.println(id+"||"+name+"||"+course);
+
+
+
 			connection.close();
 
 		} catch (ClassNotFoundException e) {
