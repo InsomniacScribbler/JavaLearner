@@ -17,13 +17,8 @@ public class FirstProject {
             Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
             //create statement
             Statement statement  = connection.createStatement();
-<<<<<<< HEAD
             String query = "select * from students";
             ResultSet resultSet = statement.executeQuery(query);
-=======
-            String qurey = "select * from students";
-            ResultSet resultSet = statement.executeQuery(qurey);
->>>>>>> 9cf0edd41ba32986da22ee674de4620b7de9f330
 
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
