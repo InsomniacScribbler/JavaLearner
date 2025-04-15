@@ -24,7 +24,7 @@ public class ResultSetDemo {
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name");
 				String course = resultSet.getString("course");
-				System.out.println(id+"||"+name+"||"+"course");
+				System.out.println(id+"||"+name+"||"+course);
 
 			}
 			connection.close();
