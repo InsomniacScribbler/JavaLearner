@@ -16,7 +16,7 @@ public class ResultSetDemo {
 			//connection establishment
 			Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
 			//create statement
-			Statement statement  = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			Statement statement  = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE); //ResultSet.CONCUR_UPDATABLE --- Helps us to update changes in the db from our code itself ; ResultSet.TYPE_SCROLL_INSENSITIVE --- the database changes are reflected in the codebase too
 			String query = "select * from students";
 			ResultSet resultSet = statement.executeQuery(query);
 
