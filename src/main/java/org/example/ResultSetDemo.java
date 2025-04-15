@@ -20,13 +20,14 @@ public class ResultSetDemo {
 			String query = "select * from students";
 			ResultSet resultSet = statement.executeQuery(query);
 
-//			while (resultSet.next()){
-//				int id = resultSet.getInt("id");
-//				String name = resultSet.getString("name");
-//				String course = resultSet.getString("course");
-//				System.out.println(id+"||"+name+"||"+course);
-//
-//			}
+			while (resultSet.next()){
+				Thread.sleep(3000);
+				int id = resultSet.getInt("id");
+				String name = resultSet.getString("name");
+				String course = resultSet.getString("course");
+				System.out.println(id+"||"+name+"||"+course);
+
+			}
 
 
 			resultSet.first();
@@ -41,9 +42,9 @@ public class ResultSetDemo {
 			resultSet.updateRow();
 
 			resultSet.moveToInsertRow();
-			resultSet.updateInt("id",5);
-			resultSet.updateString("name", "Sujit");
-			resultSet.updateString("course","MERN");
+			resultSet.updateInt("id",6);
+			resultSet.updateString("name", "Nikhil");
+			resultSet.updateString("course","Spring");
 			resultSet.insertRow();
 			resultSet.last();
 			System.out.println("Fetching last row");
@@ -56,7 +57,7 @@ public class ResultSetDemo {
 
 			connection.close();
 
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | InterruptedException e) {
 			throw new RuntimeException(e);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
