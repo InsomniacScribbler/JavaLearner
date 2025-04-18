@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main{
@@ -23,5 +24,14 @@ public class Main{
 		arrayList.set(2,30); //changes the element
 		System.out.println(arrayList.toString());
 
+
+		List<Integer> arr = Arrays.asList(1,2,3,4);
+		System.out.println(arr.toString());
+
+		List<Integer> arr1 =new ArrayList<>(arr);
+		System.out.println(arr1.toString());
+		String[] str ={"apple","banana","orange"};
+
+		System.out.println(Arrays.asList(str).toString());
 	}
 }
